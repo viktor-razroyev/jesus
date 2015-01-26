@@ -23,9 +23,14 @@ jQuery(document).ready(function() {
 	var containerForPaddingTopOffset = $containerForPaddingTop.offset().top;
 
   	function actionOnResize(){
-		$containerForPaddingTop.css({'padding-top': $(window).height()/2 - searchBlockOffset + containerForPaddingTopOffset - $searchBlock.height()/2 +'px'}).addClass("showIt");
-		$mainButton.children('span').css('background-position', '50% -'+ $mainButton.offset().top +'px');
-		console.log();
+  		$containerForPaddingTop.css({'padding-top': $(window).height()/2 - searchBlockOffset + containerForPaddingTopOffset - $searchBlock.height()/2 +'px'});
+      if ($(window).width()/$(window).height() >=  1) {
+    		$mainButton.children('span').add('body').css($(window).width() + "px " + "auto");
+      } else {
+        $mainButton.children('span').add('body').css("auto " + $(window).height() + "px");        
+      }
+      $mainButton.children('span').css('background-position', '50% -'+ $mainButton.offset().top +'px');
+      $('body').addClass("showIt");
   	};
 
 	actionOnResize(searchBlockOffset - containerForPaddingTopOffset);

@@ -3,6 +3,10 @@ body {
 	background-position: 50% 0;
 	background-repeat: no-repeat;
 	font-family: 'Open Sans', sans-serif;
+	visibility: hidden;
+}
+body.showIt {
+	visibility: visible;
 }
 .container {
 	position: relative;
@@ -16,10 +20,7 @@ body {
 }
 .main-container {
 	text-align: center;
-	visibility: hidden;
-}
-.main-container.showIt {
-	visibility: visible;
+
 }
 .main-container h1 {
 	font-size: 41px;
